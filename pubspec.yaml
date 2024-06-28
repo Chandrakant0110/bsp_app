@@ -34,6 +34,9 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+  syncfusion_flutter_pdfviewer: ^26.1.39
+  url_launcher: ^6.3.0
+  fluttertoast: ^8.2.6
 
 dev_dependencies:
   flutter_test:
@@ -59,6 +62,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/pdfs/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
