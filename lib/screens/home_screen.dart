@@ -1,6 +1,7 @@
-import 'package:bsp_app/screens/pdf_screen.dart';
+import 'package:bsp_app/screens/delay/dealy_screen.dart';
 import 'package:bsp_app/screens/services/services.dart';
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -21,9 +22,14 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                'assets/images/logo_bsp.jpg',
-                fit: BoxFit.fitHeight,
+              GestureDetector(
+                onTap: () {
+                  services.launchURL('https://www.sail-bhilaisteel.com/');
+                },
+                child: Image.asset(
+                  'assets/images/logo_bsp.jpg',
+                  fit: BoxFit.fitHeight,
+                ),
               ),
               const SizedBox(
                 width: 6,
@@ -34,15 +40,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Image.asset(
                   'assets/images/collab_logo.png',
                   fit: BoxFit.fill,
-                  // scale: 1,
                 ),
               ),
               const SizedBox(
                 width: 6,
               ),
-              Image.asset(
-                'assets/images/nitrr_logo.png',
-                fit: BoxFit.fitHeight,
+              GestureDetector(
+                onTap: () {
+                  services.launchURL('https://nitrr.ac.in/');
+                },
+                child: Image.asset(
+                  'assets/images/nitrr_logo.png',
+                  fit: BoxFit.fitHeight,
+                ),
               ),
             ],
           ),
@@ -60,7 +70,6 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Padding(
             padding: const EdgeInsets.all(12.0),
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
@@ -93,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         '- Mr. A.P. Malla, Assistant General Manager, CPD',
                       ),
                       Text(
-                        '- Mr. Amulya Priyadarshini, Chief General Manager, HRD',
+                        '- Mr. Amulya Priyadarshini, Chief General Manager, HRD',
                       ),
                     ],
                   ),
@@ -108,71 +117,187 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 16,
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 10.0),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        '- Chandrakant Sahu',
+                      GestureDetector(
+                        onTap: () {
+                          services.launchURL(
+                              'https://www.linkedin.com/in/chandrakantsahu-nitrr/');
+                        },
+                        child: const Row(
+                          children: [
+                            Text('- '),
+                            Text(
+                              'Chandrakant Sahu',
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                // decorationColor: Colors.blue,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      Text(
-                        '- Divyanshu Kumar',
+                      GestureDetector(
+                        onTap: () {
+                          services.launchURL(
+                              'https://www.linkedin.com/in/divyanshukumar11/');
+                        },
+                        child: const Row(
+                          children: [
+                            Text('- '),
+                            Text(
+                              'Divyanshu Kumar',
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                // decorationColor: Colors.blue,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      Text(
-                        '- Harsh Kumar Sonkar',
+                      GestureDetector(
+                        onTap: () {
+                          services.launchURL(
+                              'https://www.linkedin.com/in/harshkumar112/');
+                        },
+                        child: const Row(
+                          children: [
+                            Text('- '),
+                            Text(
+                              'Harsh Kumar Sonkar',
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                // decorationColor: Colors.blue,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      Text(
-                        '- Jeevesh Banchhor',
+                      GestureDetector(
+                        onTap: () {
+                          services.launchURL(
+                              'https://www.linkedin.com/in/jeevesh-banchhor-321a3325a/');
+                        },
+                        child: const Row(
+                          children: [
+                            Text('- '),
+                            Text(
+                              'Jeevesh Banchhor',
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                // decorationColor: Colors.blue,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
                 const Divider(),
                 const Text(
-                  'Project Pdf\'s',
+                  'Project Resources',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
                 ),
+                const SizedBox(
+                  height: 4,
+                ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          PDFScreen.route(
-                            '',
-                            'assets/pdfs/Final_Report_BSP.pdf',
+                    Expanded(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(elevation: 12),
+                        onPressed: () {
+                          services.launchURL(
+                              'https://drive.google.com/file/d/1EsANY87bT-U7ZNXH8o6tocGx3Bdy2yAd/view?usp=sharing');
+                        },
+                        child: const Text(
+                          'Project Report PDF',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
                           ),
-                        );
-                      },
-                      child: const Text('Project Report'),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          PDFScreen.route(
-                            '',
-                            'assets/pdfs/Impact_DataFinal.pdf',
-                          ),
-                        );
-                      },
-                      child: const Text('Model Pdf'),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        services.launchURL(
-                            'https://colab.research.google.com/drive/1TyUm4DIaCTddXj0ZzdUm5xZbVMUfrkom?usp=sharing');
-                      },
-                      child: const Text('LAUNCHuRL'),
+                        ),
+                      ),
                     ),
                   ],
                 ),
-
+                const SizedBox(
+                  height: 6,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(elevation: 12),
+                        onPressed: () {
+                          services.launchURL(
+                              'https://drive.google.com/file/d/1UJX4AdD_rL9P24462HMRyQImtQ54XSj7/view?usp=drive_link');
+                        },
+                        child: const Text(
+                          'Model PDF',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 6,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(elevation: 12),
+                        onPressed: () {
+                          services.launchURL(
+                              'https://colab.research.google.com/drive/1TyUm4DIaCTddXj0ZzdUm5xZbVMUfrkom?usp=sharing');
+                        },
+                        child: const Text(
+                          'Google Colab Link',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 6,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(elevation: 12),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            DelayScreen.route(),
+                          );
+                        },
+                        child: const Text(
+                          'Check the Delay here...',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    )
+                  ],
+                ),
                 const Divider(),
                 const Text(
                   'Machines Available In MARS-I',
@@ -182,16 +307,27 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Image.asset('assets/images/machine_1.jpg'),
-                // Text('data'),
                 const SizedBox(
                   height: 6,
                 ),
                 Image.asset('assets/images/machine_2.jpg'),
-                // Text('data'),
                 const SizedBox(
                   height: 6,
                 ),
                 Image.asset('assets/images/machine_3.jpg'),
+                const SizedBox(
+                  height: 6,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Made with '),
+                    LikeButton(
+                      isLiked: true,
+                    ),
+                    Text('by Chandrakant Sahu.'),
+                  ],
+                ),
               ],
             ),
           ),
