@@ -306,14 +306,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 16,
                   ),
                 ),
+                const Text('DRILLING MACHINE'),
                 Image.asset('assets/images/machine_1.jpg'),
                 const SizedBox(
                   height: 6,
                 ),
+                const Text('SLOTTING MACHINE IN LIGHT BAY'),
                 Image.asset('assets/images/machine_2.jpg'),
                 const SizedBox(
                   height: 6,
                 ),
+                const Text('SLOTTING MACHINE IN HEAVY BAY'),
                 Image.asset('assets/images/machine_3.jpg'),
                 const SizedBox(
                   height: 6,

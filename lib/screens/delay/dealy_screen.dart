@@ -174,7 +174,7 @@ class _DelayScreenState extends State<DelayScreen> {
                         border: OutlineInputBorder(),
                       ),
                       icon: const Icon(Icons.arrow_downward),
-                      iconSize: 24,
+                      iconSize: 20,
                       elevation: 16,
                       style: const TextStyle(color: Colors.deepPurple),
                       onChanged: (String? newValue) {
@@ -269,7 +269,6 @@ class _DelayScreenState extends State<DelayScreen> {
           ),
         ),
       ),
-      
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
